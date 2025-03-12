@@ -1,0 +1,207 @@
+//====================================================================================================
+.footer {
+  font-size: 12px;
+  line-height: 1.33;
+
+  &__container {
+    position: relative;
+    &::before {
+      display: inline-block;
+      content: url('@img/footer-decor.svg');
+      position: absolute;
+      bottom: -547px;
+      left: -835px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 25px 0 40px;
+    border-top: 1px solid $green;
+    gap: 40px 60px;
+    @include media-min($mobileSmall) {
+      row-gap: 50px;
+    }
+    @include media-min($mobile) {
+      column-gap: 80px;
+    }
+    @include media-min($tablet) {
+      column-gap: 40px;
+    }
+  }
+
+  &__column {
+    flex: 1 1 100%;
+    @include media-max($tablet) {
+      &:nth-child(2n + 2) {
+        justify-self: flex-end;
+      }
+    }
+
+    @include media-min($mobileSmall) {
+      flex-basis: 40%;
+      &_contacts {
+        padding-top: 22px;
+      }
+    }
+    @include media-min($mobile) {
+      &_contacts {
+        padding-top: 30px;
+      }
+    }
+    @include media-min($tablet) {
+      flex-basis: 18%;
+      &_info {
+        flex-basis: 290px;
+        max-width: 290px;
+      }
+      &_contacts {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 12px;
+    img {
+      @include media-min($mobile) {
+        height: 65px;
+      }
+    }
+  }
+
+  &__copy {
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  &__privacy {
+    margin-bottom: 20px;
+    @include media-min($mobile) {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__socials {
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contacts-item {
+    & + & {
+      margin-top: 18px;
+      @include media-min($mobile) {
+        margin-top: 24px;
+      }
+    }
+    &._location {
+      @include media-min($tablet) {
+        max-width: 150px;
+      }
+    }
+    &._email {
+      &::before {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    &._email,
+    &._tel {
+      font-size: 12px;
+      @include media-min($mobileSmall) {
+        font-size: 14px;
+      }
+      @include media-min($mobile) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__contacts-text {
+  }
+
+  &__title,
+  &__nav-link {
+    font-weight: 700;
+    letter-spacing: 1.3px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 19px;
+  }
+
+  &__nav {
+  }
+  &__nav-list {
+  }
+  &__nav-item {
+    & + & {
+      margin-top: 15px;
+    }
+  }
+
+  &__nav-link {
+    @media (any-hover: hover) {
+      transition: color 0.3s ease 0s;
+      &:hover {
+        color: $greenLight;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -6px;
+
+  &__item {
+    padding: 6px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    svg {
+      height: 12px;
+      width: 12px;
+      object-fit: contain;
+      fill: $black;
+    }
+
+    &_telegram {
+      svg {
+        transform: translate3d(-1px, 0.5px, 0);
+      }
+    }
+    &_whatsapp {
+      svg {
+        transform: translate3d(0.5px, -0.5px, 0);
+      }
+    }
+
+    @media (any-hover: hover) {
+      transition: background-color 0.3s ease 0s;
+      svg {
+        transition: fill 0.3s ease 0s;
+      }
+      &:hover {
+        background-color: $greenLight;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+//====================================================================================================
